@@ -1,0 +1,9 @@
+version: 0.2
+phases:
+  build:
+    commands:
+      - aws deploy push --application-name test-cicd-app --s3-location s3://test-ec2-cicd-artifact/artifact.zip --source src
+artifacts:
+  files:
+    - '**/*'
+  base-directory: src
